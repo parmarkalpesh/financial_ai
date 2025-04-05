@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import './Home.css';
 
-const genAI = new GoogleGenerativeAI("AIzaSyAIB1mn4cyFqnJ77WTPWSC_03B1cmgQfoA");
+const genAI = new GoogleGenerativeAI("API_KEY");//Add Your Api Key From Gemini Api Studio
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 const Home = () => {
