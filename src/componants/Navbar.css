@@ -1,24 +1,21 @@
 .transparent-navbar .navbar {
-  background: rgba(255, 255, 255, 0.1) !important; /* Light transparent background */
-  backdrop-filter: blur(10px); /* Apply blur effect */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Slight border */
+  background: rgba(255, 255, 255, 0.1) !important; 
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
   box-shadow: none !important;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000;
   transition: background 0.3s ease;
 }
 
-/* Make navbar text visible on blur background */
 .transparent-navbar .navbar-brand,
 .transparent-navbar .nav-link {
   color: white !important;
 }
 
-/* Navbar toggle button icon visibility */
 .transparent-navbar .navbar-toggler-icon {
   filter: invert(1);
 }
 
-/* Optional: Add hover effect for navbar links */
 .transparent-navbar .nav-link {
   transition: opacity 0.3s ease;
 }
@@ -27,7 +24,6 @@
   opacity: 0.8;
 }
 
-/* Responsive fix: Slightly darken background when scrolled */
 .transparent-navbar .navbar.scrolled {
   background: rgba(255, 255, 255, 0.2) !important;
   backdrop-filter: blur(15px);

@@ -1,198 +1,123 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: auto;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  background-image: url('../asset/bg.png');
 }
 
-/* AI Chat Section - Vertical Portion, Centered Horizontally, Responsive */
+.finance-ai-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
 .ai-chat-section {
-  position: relative; /* Or absolute, depending on your layout */
-  width: 95%; /* Adjust as needed */
-  max-width: 800px; /* Increased max-width to accommodate wider content */
-  /* height: 80vh; Adjust the vertical height as desired */
-  margin: 2rem auto; /* Center horizontally with some top/bottom margin */
+  width: 100%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space for input at bottom */
-  align-items: stretch; /* Stretch items to the width of the container */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 1.5rem;
-  border-radius: 12px; /* Add rounded corners if desired */
+  gap: 1rem;
 }
 
-/* AI Chat Messages - Scrollable within the Section */
+
 .ai-chat-messages {
-  width: 100%;
+  max-height: 350px;
+  overflow-y: auto;
   display: flex;
-  flex-direction: column; /* Stack messages vertically */
-  overflow-y: auto; /* Enable vertical scrolling */
-  /* padding: 11rem; */
-  border-radius: 8px;
-  margin-bottom: 0.8rem; /* Space between messages and input */
-  flex-grow: 1; /* Allow messages to take up available vertical space */
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 6px;
 }
 
-/* Custom Scrollbar for WebKit Browsers */
 .ai-chat-messages::-webkit-scrollbar {
   width: 6px;
 }
 
 .ai-chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
-.ai-chat-messages::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* Chat Input - Fixed at Bottom of the Chat Section */
-.ai-chat-input {
-  width: 100%;
-  display: flex;
-  gap: 0.8rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 0.8rem;
-  border-radius: 12px;
-}
-
-.ai-chat-input input {
-  flex: 1;
-  padding: 0.8rem;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  white-space: nowrap; /* Prevent text from wrapping within the input */
-  overflow-x: auto; /* Enable horizontal scrolling if text exceeds the width */
-}
-
-.ai-chat-input input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1rem;
-}
-
-/* Send Button */
-.ai-send-button {
-  background: rgba(0, 123, 255, 0.7);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  font-size: 1rem;
-}
-
-.ai-send-button:hover {
-  background: rgba(0, 123, 255, 0.9);
-}
-
-.ai-send-button:disabled {
-  background: rgba(108, 117, 125, 0.6);
-  cursor: not-allowed;
-}
-
-/* Message Styling */
 .message-container {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 0.8rem;
   align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.user-message .message-container {
-  align-items: flex-end;
+.ai-icon {
+  margin-top: 4px;
+  color: #007bff;
 }
 
 .message-content {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-  padding: 0.8rem 1rem;
+  background: #f1f5f9;
+  padding: 0.75rem 1rem;
   border-radius: 10px;
-  word-break: break-word; /* Ensure text wraps in messages */
-  white-space: pre-wrap; /* Preserve line breaks from the AI in messages */
-}
-
-.ai-message .message-content {
-  background: rgba(227, 242, 253, 0.4);
-  color: #333;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .user-message .message-content {
-  background: rgba(0, 123, 255, 0.5);
-  color: white;
+  background: #dbeafe;
+  align-self: flex-end;
 }
 
-/* Background Image (Keep if you still want it for the whole page) */
-body {
-  background-image: url('../../public/images/bg.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-/* Code Styling */
-pre {
-  background-color: #282a36;
-  color: #f8f8f2;
-  padding: 1rem;
+.investment-details-form .form-control,
+.investment-details-form .form-select {
   border-radius: 8px;
-  overflow-x: auto;
-  font-size: 0.9rem;
-  white-space: pre-wrap;
+  padding: 0.6rem 1rem;
 }
 
-code {
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+.combined-query-box {
+  resize: vertical;
 }
 
-/* Responsive Design Adjustments for the Vertical Section */
+.ai-send-button,
+.report-download-button {
+  background-color: #007bff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.ai-send-button:hover,
+.report-download-button:hover {
+  background-color: #0056b3;
+}
+
+.report-download-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 @media (max-width: 768px) {
   .ai-chat-section {
-      /* width: 98%; */
-      /* margin: 1rem auto; */
-      padding: 9rem;
-      /* border-radius: 8px; */
-      /* height: 70vh; Adjust as needed for smaller screens */
-      /* max-width: none; Remove max-width on smaller screens if needed */
-  }
-
-  .ai-chat-messages {
-      padding: 0.6rem;
-      border-radius: 6px;
-      margin-bottom: 0.6rem;
-  }
-
-  .ai-chat-input {
-      gap: 0.6rem;
-      padding: 0.6rem;
-      border-radius: 8px;
-  }
-
-  .ai-chat-input input {
-      padding: 0.7rem;
-      font-size: 0.9rem;
-  }
-
-  .ai-send-button {
-      padding: 0.7rem 1.2rem;
-      font-size: 0.9rem;
+    padding: 1rem;
   }
 
   .message-content {
-      max-width: 98%; /* Adjust message width for smaller screens */
+    font-size: 0.9rem;
   }
-}
 
+  .investment-details-form .row {
+    flex-direction: column;
+  }
 
-@media (max-width: 375px) {
-  .message-content {
-      font-size: 0.85rem;
+  .report-download-button {
+    padding: 0.5rem 1rem;
   }
 }
