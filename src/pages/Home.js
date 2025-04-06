@@ -9,8 +9,8 @@ import "./Home.css";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 
-const genAI = new GoogleGenerativeAI("AIzaSyAIB1mn4cyFqnJ77WTPWSC_03B1cmgQfoA");//Add API_KEY
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });// add API_MODEL_NAME
+const genAI = new GoogleGenerativeAI("AIzaSyAIB1mn4cyFqnJ77WTPWSC_03B1cmgQfoA");
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
